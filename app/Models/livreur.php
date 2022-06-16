@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class livreur extends Model
+class Livreur extends Model
 {
-    protected $fillable = ['Nom', 'Prénom', 'Adresse', 'email', 'photo', 'Tel', 'etat', 'vehicule'];
+    protected $fillable = ['nom', 'prenom', 'adresse', 'email', 'photo', 'tel', 'etat', 'vehicule'];
     use HasFactory;
 }

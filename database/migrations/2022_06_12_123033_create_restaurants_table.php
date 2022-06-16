@@ -20,7 +20,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('adresse');
             $table->string('email')->unique();
             $table->string('photo');
-            $table->string('phone');
+            $table->string('tel');
             $table->string('registre_commerce');
             $table->string('type_restaurant');
             $table->foreignId('users_id')->constrained('users');
