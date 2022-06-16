@@ -17,13 +17,7 @@ Route::get('/', function () {
     return redirect()->route('products.index');
 });
 
-// Route::get('/home', function () {
-//     return redirect()->route('products.index');
-// });
 
-
-
-// neeeeeeeeeeeeeeeeeeeeeeeeeeeeew
 Route::get('filab', [RestController::class, 'get_restarants'])->name('myfilab');
 
 Auth::routes();
@@ -48,22 +42,9 @@ Route::post('/register/{type}', [UserController::class, 'storeByType'])->name('r
 Route::get('/profile/{user}', [UserController::class, 'userProfile'])->name('profile');
 Route::get('/profile/{user}', [UserController::class, 'userProfile'])->name('users.profile');
 Route::get('/panier', [ProductController::class, 'panier'])->name('panier.my');
-Route::get('/products/search/{search}', [ProductController::class, 'search']);
-Route::resource('/products', ProductController::class);
-Route::get('/my_products', [ProductController::class, 'myProducts'])->name('products.my');
 Route::get('/panier', [ProductController::class, 'panier'])->name('panier.my');
 
-Route::get('/products/{product}/order', [OrderController::class, 'order'])->name('products.order');
-Route::get('/products/{product}/order/success', [OrderController::class, 'orderExchange'])->name('products.order.exchange');
 
-Route::post('/products/search', [ProductController::class, 'search'])->name('products.search');
-
-// Route::get('/products/search/{search}', [ProductController::class, 'search'])->name('products.search');
-
-Route::get('/products/{product}/payment', [PaymentController::class, 'payment'])->name('products.payment');
-Route::get('/products/{product}/payment/success', [PaymentController::class, 'success'])->name('products.payment.success');
-Route::get('/products/{product}/payment/failed', [PaymentController::class, 'failed'])->name('products.payment.failed');
-// Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
 
 Route::get('/locale', function () {
     return view('translation');

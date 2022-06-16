@@ -15,14 +15,14 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom');
-            $table->string('Prénom');
-            $table->string('Adresse');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('adresse');
             $table->string('email')->unique();
             $table->string('photo');
-            $table->string('Tel');
-            $table->string('Registre commerce');
-            $table->string('Type restaurant');
+            $table->string('phone');
+            $table->string('registre_commerce');
+            $table->string('type_restaurant');
             $table->foreignId('users_id')->constrained('users');
 
             $table->timestamps();
