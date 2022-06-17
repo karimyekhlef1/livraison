@@ -39,22 +39,6 @@
                          
                         
                        </div>
-                        {{-- <li class="nav-item">  
-                            @include('components.categories_list')
-                        </li> --}}
-                        <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a> --}}
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ __('Products') }}
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                {{-- <a class="dropdown-item" href="{{route('products.index')}}">{{ __('All') }}</a>
-                                <a class="dropdown-item" href="{{route('products.index', ['valid' => 'yes'])}}">{{ __('Valid') }}</a>
-                                <a class="dropdown-item" href="{{route('products.index', ['valid' => 'no'])}}">{{ __('Not Valid') }}</a> --}}
-                                </div>
-                            </div>
-                        </li>
                         
                         {{-- المستخدم يجب ان يكون داخل --}}
                         {{-- @auth
