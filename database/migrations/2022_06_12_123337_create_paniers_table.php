@@ -16,6 +16,7 @@ class CreatePaniersTable extends Migration
         Schema::create('paniers', function (Blueprint $table) {
             $table->id();
             $table->double('total');
+            $table->foreignId('user_id')->constrained('users');
             $table->integer('nomber_article');
             $table->timestamps();
         });

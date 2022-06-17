@@ -15,9 +15,9 @@ class CreateLignePanierTable extends Migration
     {
         Schema::create('ligne_panier', function (Blueprint $table) {
             $table->id();
-            $table->double('Quantité');
-            $table->integer('Montant');
-            $table->foreignId('paniers_id')->constrained('paniers');
+            $table->double('quantite');
+            $table->integer('montant');
+            $table->foreignId('panier_id')->constrained('paniers');
             $table->foreignId('plats_id')->constrained('plats');
 
             $table->timestamps();
