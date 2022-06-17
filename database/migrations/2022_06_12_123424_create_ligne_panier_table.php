@@ -15,10 +15,11 @@ class CreateLignePanierTable extends Migration
     {
         Schema::create('ligne_panier', function (Blueprint $table) {
             $table->id();
-            $table->double('quantite');
-            $table->integer('montant');
-            $table->foreignId('panier_id')->constrained('paniers');
-            $table->foreignId('plats_id')->constrained('plats');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('panier_id')->nullable()->constrained('paniers');
+            $table->foreignId('plat_id')->constrained('plats');
+            $table->integer('quantite')->default(1);
+            $table->integer('montant')->default(0);
 
             $table->timestamps();
         });

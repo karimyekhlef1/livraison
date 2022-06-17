@@ -26,7 +26,9 @@ Route::get('filab', [RestController::class, 'get_restarants'])->name('myfilab');
 Route::get('/restaurants', [RestaurantController::class, 'get_restarants'])->name('restaurants.index');
 Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
 
+Route::post('/restaurants/ajouter-plat-panier', [RestaurantController::class, 'ajouter_plat_panier'])->name('ajouter-plat-panier');
 
+Route::get('/panier-plat-list', [RestaurantController::class, 'plat_panier_list'])->name('panier.list');
 
 Auth::routes();
 

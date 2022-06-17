@@ -50,4 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Product::class, 'created_by', 'id');
     }
+
+    public function panier_plats()
+    {
+        return $this->belongsToMany(Plat::class, 'ligne_panier' , 'user_id', 'plat_id')->withPivot('quantite');
+    }
 }

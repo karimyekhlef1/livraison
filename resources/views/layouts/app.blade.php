@@ -41,21 +41,11 @@
                        </div>
                         
                         {{-- المستخدم يجب ان يكون داخل --}}
-                        {{-- @auth
+                        @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('products.create') }}">{{ __('Add Product') }}</a>
+                                <a href="{{route('panier.list')}}" title="shopping cart icons">Panier <img src="/assets/images/shopping-cart.png" alt="" width="20" height="20"></a>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('products.my') }}">{{ __('My Products') }}</a>
-                            </li>   
-                        
-                                   <li class="nav-item">
-                                <a class="nav-link" href="{{ route('panier.my') }}">{{ __('panier') }}</a>
-                            </li>
-                         
-                         
-                        @endauth --}}
+                        @endauth 
                         
                         {{-- المستخدم يجب ان يكون له الإظن باالوصول  --}}
                         @auth
