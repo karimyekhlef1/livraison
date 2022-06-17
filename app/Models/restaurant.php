@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     protected $table = "restaurants";
-    protected $fillable = ['Nom', 'prenom', 'tel', 'adresse', 'email', 'photo', 'registre_commerce', 'type_restaurant'];
+    protected $fillable = ['nom', 'prenom', 'tel', 'adresse', 'email', 'photo', 'registre_commerce', 'type_restaurant'];
+    // protected $hidden = []
     use HasFactory;
+
+    public function plats() {
+        return $this->hasMany(Plat::class, 'restaurant_id', 'id');        
+    }
 }

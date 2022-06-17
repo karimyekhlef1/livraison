@@ -8,17 +8,25 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\RestController;
+use App\Http\Controllers\{
+    RestController,
+    RestaurantController,
+};
 
 
 use Illuminate\Support\Facades\App;
 
 Route::get('/', function () {
-    return redirect()->route('products.index');
+    return redirect()->route('restaurants.index');
 });
 
 
 Route::get('filab', [RestController::class, 'get_restarants'])->name('myfilab');
+
+Route::get('/restaurants', [RestaurantController::class, 'get_restarants'])->name('restaurants.index');
+Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
+
+
 
 Auth::routes();
 

@@ -26,6 +26,9 @@
                 <div class="card-body">
                     @yield('card-body')
                 </div>
+                <div class="card-footer">
+                    @yield('card-footer')
+                </div>
             </div>
         </div>
     </div>

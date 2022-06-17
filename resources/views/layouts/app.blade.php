@@ -39,9 +39,9 @@
                          
                         
                        </div>
-                        <li class="nav-item">  
+                        {{-- <li class="nav-item">  
                             @include('components.categories_list')
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             {{-- <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a> --}}
                             <div class="dropdown">
@@ -49,15 +49,15 @@
                                     {{ __('Products') }}
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{route('products.index')}}">{{ __('All') }}</a>
+                                {{-- <a class="dropdown-item" href="{{route('products.index')}}">{{ __('All') }}</a>
                                 <a class="dropdown-item" href="{{route('products.index', ['valid' => 'yes'])}}">{{ __('Valid') }}</a>
-                                <a class="dropdown-item" href="{{route('products.index', ['valid' => 'no'])}}">{{ __('Not Valid') }}</a>
+                                <a class="dropdown-item" href="{{route('products.index', ['valid' => 'no'])}}">{{ __('Not Valid') }}</a> --}}
                                 </div>
                             </div>
                         </li>
                         
                         {{-- المستخدم يجب ان يكون داخل --}}
-                        @auth
+                        {{-- @auth
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products.create') }}">{{ __('Add Product') }}</a>
                             </li>
@@ -71,7 +71,7 @@
                             </li>
                          
                          
-                        @endauth
+                        @endauth --}}
                         
                         {{-- المستخدم يجب ان يكون له الإظن باالوصول  --}}
                         @auth
@@ -85,11 +85,11 @@
                         
                         
                     </ul>
-                    <form class="form-inline my-2 my-lg-0" action=" {{ route('products.search') }}" method="POST">
+                    {{-- <form class="form-inline my-2 my-lg-0" action=" {{ route('products.search') }}" method="POST">
                         @csrf
                         <input class="form-control mr-sm-2" name="search" value="{{ Request::get('search') }}" type="search" placeholder="Search Product" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    </form> --}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

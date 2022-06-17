@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
                 'is_valid' => true,
                 'is_blocked' => false,
             ]);
-            $admin->assignRole('admin');
         }
 
         if (! User::where( ['email' => 'user@user.com'])->count() > 0){
@@ -33,7 +32,6 @@ class UserSeeder extends Seeder
                 'is_valid' => false,
                 'is_blocked' => false,
             ]);
-            $user->assignRole('user');
         }
 
         for ($i=0; $i < 10; $i++) { 
@@ -42,7 +40,6 @@ class UserSeeder extends Seeder
                 'is_valid' => false,
                 'is_blocked' => false,
             ]);
-            $user->assignRole('user');
         }
     }
 }
