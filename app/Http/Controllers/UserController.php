@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
-    const TYPES_CLIENT = 'client';
+    const TYPE_CLIENT = 'client';
     const TYPE_LIVREUR = 'livreur';
-    const TYPES_RESTAURANT = 'restaurant';
+    const TYPE_RESTAURANT = 'restaurant';
 
 
     public function __construct()
@@ -180,20 +180,20 @@ class UserController extends Controller
     }
     public function registerByType(Request $request)
     {
-        if ($request->type === self::TYPES_CLIENT) {
-            return view('auth.client', ['type' => self::TYPES_CLIENT]);
+        if ($request->type === self::TYPE_CLIENT) {
+            return view('auth.client', ['type' => self::TYPE_CLIENT]);
         }
         if ($request->type === self::TYPE_LIVREUR) {
             return view('auth.client', ['type' => self::TYPE_LIVREUR]);
         }
-        if ($request->type === self::TYPES_RESTAURANT) {
-            return view('auth.client', ['type' => self::TYPES_RESTAURANT]);
+        if ($request->type === self::TYPE_RESTAURANT) {
+            return view('auth.client', ['type' => self::TYPE_RESTAURANT]);
         }
     }
 
     public function storeByType(Request $request)
     {
-        if ($request->type === self::TYPES_CLIENT) {
+        if ($request->type === self::TYPE_CLIENT) {
             // $client = Client::create($request);
             return view('home');
         }
@@ -201,8 +201,8 @@ class UserController extends Controller
             // $livreur = Livreur::create($request);
             return view('waiting'); // to waiting page
         }
-        if ($request->type === self::TYPES_RESTAURANT) {
-            // $restaurant = Restaurant::create($request);
+        if ($request->type === self::TYPE_RESTAURANT) {
+            $restaurant = Restaurant::create($request->all());
             return view('waiting'); // to waiting page
         }
     }
