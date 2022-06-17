@@ -16,16 +16,16 @@ class CreateRestaurantsTable extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('nom_de_restaurant');
-            $table->string('nom');
+            $table->string('name');
             $table->string('prenom');
             $table->string('adresse');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('photo');
-            $table->string('tel');
+            $table->string('photo')->nullable();
+            $table->string('tel')->nullable();
             $table->string('registre_commerce');
             $table->string('type_restaurant');
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('users_id')->nullable()->constrained('users');
 
             $table->timestamps();
         });

@@ -15,15 +15,15 @@ class CreateLivreursTable extends Migration
     {
         Schema::create('livreurs', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom');
-            $table->string('Prénom');
-            $table->string('Adresse');
+            $table->string('name');
+            $table->string('prenom');
+            $table->string('adresse');
             $table->string('email')->unique();
-            $table->string('photo');
-            $table->string('Tel');
-            $table->boolean('etat');
+            $table->string('photo')->nullable();
+            $table->string('tel')->nullable();
+            $table->boolean('etat')->default(0);
             $table->string('vehicule');
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('users_id')->nullable()->constrained('users');
 
             $table->timestamps();
         });

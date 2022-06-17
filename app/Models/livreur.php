@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Livreur extends Model
 {
-    protected $fillable = ['nom', 'prenom', 'adresse', 'email', 'photo', 'tel', 'etat', 'vehicule'];
+    protected $fillable = ['name', 'prenom', 'adresse', 'email', 'photo', 'tel', 'etat', 'vehicule'];
     use HasFactory;
 }

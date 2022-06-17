@@ -16,7 +16,7 @@ class RestaurantSeeder extends Seeder
     {
         Restaurant::create([
             'nom_de_restaurant' => 'Pizza Mega - La casa',
-            'nom' => 'Islam',
+            'name' => 'Islam',
             'prenom' => 'Rahim',
             'adresse' => 'Mila',
             'tel' => '+213456557878',
@@ -29,7 +29,7 @@ class RestaurantSeeder extends Seeder
         ]);
         Restaurant::create([
             'nom_de_restaurant' => 'Fish Restau - Marina',
-            'nom' => 'moradd',
+            'name' => 'moradd',
             'prenom' => 'Rahim',
             'adresse' => 'Jijel',
             'tel' => '+213456557878',

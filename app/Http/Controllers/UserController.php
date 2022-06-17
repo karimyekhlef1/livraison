@@ -6,6 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\ {
+    Restaurant,
+    Livreur,
+    Client
+};
 
 class UserController extends Controller
 {
@@ -129,11 +134,11 @@ class UserController extends Controller
         if ($request->address != null) {
             $user->address = $request->address;
         }
-        if (auth()->user()->is_admin === 1) {
+       if (auth()->user()->is_admin === 1) {
             $user->is_admin = $request->is_admin;
             $user->is_valid = $request->is_valid;
             $user->is_blocked = $request->is_blocked;
-        }
+        } 
 
         $user->save();
 
@@ -180,6 +185,9 @@ class UserController extends Controller
     }
     public function registerByType(Request $request)
     {
+        if(auth()->user()){
+            return redirect('/');
+        }
         if ($request->type === self::TYPE_CLIENT) {
             return view('auth.client', ['type' => self::TYPE_CLIENT]);
         }
@@ -193,17 +201,32 @@ class UserController extends Controller
 
     public function storeByType(Request $request)
     {
-        if ($request->type === self::TYPE_CLIENT) {
-            // $client = Client::create($request);
+        $data = $request->all();
+        unset($data['_token']);
+          
+        if ($data['type'] === self::TYPE_CLIENT) {
+            $user = User::create($data);
+            unset($data['type']);
+          
+            $client = Client::create($data);
+            auth()->login($user);
             return view('home');
         }
-        if ($request->type === self::TYPE_LIVREUR) {
-            // $livreur = Livreur::create($request);
-            return view('waiting'); // to waiting page
+        if ($data['type'] === self::TYPE_LIVREUR) {
+            $user = User::create($data);
+            unset($data['type']);
+            $livreur = Livreur::create($data);
+            auth()->login($user);
+            return view('home'); // to waiting page
         }
-        if ($request->type === self::TYPE_RESTAURANT) {
-            $restaurant = Restaurant::create($request->all());
-            return view('waiting'); // to waiting page
+        if  ($data['type'] === self::TYPE_RESTAURANT) {
+            $user = User::create($data);
+            unset($data['type']);
+            $restaurant = Restaurant::create($data);
+            auth()->login($user);
+
+            
+            return view('home'); // to waiting page
         }
     }
 }
