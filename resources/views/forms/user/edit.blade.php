@@ -1,4 +1,4 @@
-<form action=" {{ route('admin.users.update', ['user'=> $user->id]) }} " method="POST">
+<form action=" {{ route('admin.users.update', ['user'=> $user->id]) }} " method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-row">
@@ -26,6 +26,10 @@
     <div class="form-group">
       <label for="inputAddress">Address</label>
       <input type="text" name="address" class="form-control" value=" {{ $user->address }} " id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input type="file" name="photo" class="form-control" value=" {{ $user->photo }} " id="photo" placeholder="1234 Main St">
     </div>
     @auth
         @if (auth()->user()->is_admin)

@@ -201,7 +201,10 @@ class UserController extends Controller
 
     public function storeByType(Request $request)
     {
+        $photo_name = $request->file('photo')->getClientOriginalName();
+        $file = $request->file('photo')->storeAs('public/images', $photo_name); // save file locally
         $data = $request->all();
+        $data['photo'] =  $photo_name;
         unset($data['_token']);
           
         if ($data['type'] === self::TYPE_CLIENT) {

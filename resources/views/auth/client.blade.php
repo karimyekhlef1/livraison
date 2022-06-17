@@ -10,7 +10,7 @@
                 
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register.type', ['type'=> $type]) }}">
+                    <form method="POST" action="{{ route('register.type', ['type'=> $type]) }}" enctype="multipart/form-data">
                         @csrf
                         
                         <input type="hidden" id="user_type" name="type" value="{{$type}}">
@@ -140,7 +140,7 @@
                             <label for="vehicule" class="col-md-4 col-form-label text-md-right">{{ __('Vehicule') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vehicule" type="text" class="form-control @error('vehicule') is-invalid @enderror" name="vehicule" value="{{ old('vehicule ') }}" required autocomplete="vehicule " autofocus>
+                                <input id="vehicule" type="text" class="form-control @error('vehicule') is-invalid @enderror" name="vehicule" value="{{ old('vehicule') }}" required autocomplete="vehicule" autofocus>
 
                                 @error('vehicule')
                                     <span class="invalid-feedback" role="alert">
@@ -150,6 +150,20 @@
                             </div>
                         </div>
                         @endif
+                        
+                        <div class="form-group row">
+                            <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('photo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="photo" autofocus>
+
+                                @error('photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
 
 
