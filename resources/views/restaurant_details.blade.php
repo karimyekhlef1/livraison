@@ -58,11 +58,8 @@
                 <span class="review-no">41 reviews</span>
             </div>
             <p class="restaurant-description"> {{ $restaurant->description }} </p>
-            <h6>Quantity Stock : {{ $restaurant->quantity }}</h6>
-            {{-- <h6>Created By  : <a href="{{ route('users.profile', ['user' => $restaurant->created_by]) }}" class="font-weight-bold">{{ $restaurant->user->name }}</a> </h6> --}}
-            {{-- <h6>Category : <a href="{{ route('restaurants.index', ['category' => $restaurant->category_id]) }}" class="font-weight-bold">{{ $restaurant->category->name }}</a> </h6> --}}
-            <h4 class="price">current price: <span> {{ $restaurant->price }} (DZD)</span></h4>
-            <p class="vote"><strong>91%</strong> of buyers enjoyed this restaurant! <strong>(87 votes)</strong></p>
+            {{-- <h6>Cree par  : <a href="{{ route('users.profile', ['user' => $restaurant->created_by]) }}" class="font-weight-bold">{{ $restaurant->user->name }}</a> </h6> --}}
+            <h6>Type de Restaurant : {{ $restaurant->type_restaurant }} </h6>
             
             <h5 class="sizes">{{ $restaurant->is_valid ? 'restaurant Valid' : 'restaurant Not Valid' }}
             </h5>
