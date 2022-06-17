@@ -26,7 +26,7 @@ class PlatSeeder extends Seeder
             'description' =>'fish description',
             'photo' =>'fish.jpg',
             'prix' => '1200',
-            'restaurant_id'=> 1
+            'restaurant_id'=> 2
         ]);
     }
 }

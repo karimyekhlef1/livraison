@@ -35,7 +35,7 @@ class RestaurantSeeder extends Seeder
             'tel' => '+213456557878',
             'photo' => 'restau-2.jpg',
             'registre_commerce' => 'RG',
-            'type_restaurant' => 'phish',
+            'type_restaurant' => 'pish',
             'users_id' => 1,
             'email' => 'resto2@resto2.com', // as User
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', //password
