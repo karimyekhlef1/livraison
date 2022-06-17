@@ -15,11 +15,11 @@ class CreatePlatsTable extends Migration
     {
         Schema::create('plats', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom_du_plat');
-            $table->string('Description');
-            $table->string('Potos');
-            $table->string('Prix');
-            $table->foreignId('restaurants_id')->constrained('restaurants');
+            $table->string('nom_du_plat');
+            $table->string('description');
+            $table->string('photo');
+            $table->string('prix');
+            $table->foreignId('restaurant_id')->constrained('restaurants');
             $table->timestamps();
         });
     }
