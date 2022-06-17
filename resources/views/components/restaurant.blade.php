@@ -11,6 +11,3 @@
            class="btn btn-primary">Details</a>
         </div>
     </div>
-
-
-  </div>
