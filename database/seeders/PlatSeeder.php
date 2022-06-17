@@ -16,14 +16,14 @@ class PlatSeeder extends Seeder
     {
         Plat::create([
             'nom_du_plat' => 'pizza',
-            'description' =>'pizza',
+            'description' =>'pizza description',
             'photo' =>'pizza.jpg',
             'prix' => '600',
             'restaurant_id'=> 1
         ]);
         Plat::create([
             'nom_du_plat' => 'fish',
-            'description' =>'fish',
+            'description' =>'fish description',
             'photo' =>'fish.jpg',
             'prix' => '1200',
             'restaurant_id'=> 1

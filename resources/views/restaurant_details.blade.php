@@ -46,7 +46,7 @@
             
         </div>
         <div class="details col-md-6">
-            <h3 class="restaurant-title"> {{ $restaurant->title }} </h3>
+            <h3 class="restaurant-title"> {{ $restaurant->nom_de_restaurant }} </h3>
             <div class="rating">
                 <div class="stars">
                     <span class="fa fa-star checked"></span>
